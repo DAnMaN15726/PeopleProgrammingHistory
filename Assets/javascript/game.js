@@ -1,7 +1,17 @@
 let score = 0;
-var arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
+const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
 
 
+// The objects and array I can use for the hintSystem() //
+const BS = {firstName: "Bjarne", lastName: "Stroustrup"};
+const JG = {firstName: "James", lastName: "Gosling"};
+const arrayHint = [BS, JG];
+//___________________________________________________________________________________________________________________________//
+
+
+
+
+//___________________________________________________________________________________________________________________________//
 
 
 // Handles which question is asked //
@@ -21,8 +31,11 @@ function theQuestion(){
 
 // Determines what happens with the answer provided //
 function theAnswer(array){
-    var counter = 3;
-    var arrayB = ["bjarne stroustrup", "james gosling"]
+    hintRef = array[1];                                             // I am using this variable to enter into the hint system.
+    var counter = 3;                                                // This counter keeps track of the while loop and also keeps track of the number of tries left.
+    var arrayB = ["bjarne stroustrup", "james gosling"]             // This is the array that has all of the answers. In a meticulous order.
+    var x = -1;
+
     
     while( counter !=0){
         let p = array[0].toLowerCase();
@@ -35,11 +48,16 @@ function theAnswer(array){
         else{
             
             
-            prompt("WRONG!");
         
             scoreKeep(false);
             counter = counter - 1;
-            prompt(`You have ${counter} tries left`);
+            x = x + 1;
+            prompt(`WRONG! You have ${counter} tries left`);
+            
+            hintSystem(array[1], x);       console.log(array[1]);
+            
+            
+            
             if( counter === 0){
                 break;
             }else{
@@ -96,7 +114,32 @@ function scoreKeep(verdict){
 
 
 
-function hintSystem(){
+function hintSystem(varia, x){
+    console.log(varia);
+    // const BS = {firstName: "Bjarne", lastName: "Stroustrup"};
+    // const JG = {firstName: "James", lastName: "Gosling"};
+    // const arrayHint = [BS, JG];
+    
+    
+    // prompt(Object.keys(arrayHint[varia])[varia]);
+    // console.log(Object.keys(arrayHint[varia])[varia]);
+
+
+    var d2Array = [
+        ["First name is Bjarne", "Last name is Stroustrep"],
+        ["First name is James", "Last name is Gosling"]
+    ];
+    
+
+
+    console.log(d2Array[varia][x]);
+
+
+
+
+
+
+
 
 }
 
