@@ -1,11 +1,10 @@
 let score = 0;
 const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
+const guessA = [];
 
 
 // The objects and array I can use for the hintSystem() //
-const BS = {firstName: "Bjarne", lastName: "Stroustrup"};
-const JG = {firstName: "James", lastName: "Gosling"};
-const arrayHint = [BS, JG];
+
 //___________________________________________________________________________________________________________________________//
 
 
@@ -16,7 +15,7 @@ const arrayHint = [BS, JG];
 
 // Handles which question is asked //
 function theQuestion(){
-
+    let guessA = [3];
     
     
     var Y = Math.floor(Math.random() * arrayA.length);
@@ -50,6 +49,7 @@ function theAnswer(array){
             
         
             scoreKeep(false);
+            soFar(array[0])
             counter = counter - 1;
             x = x + 1;
             prompt(`WRONG! You have ${counter} tries left`);
@@ -88,13 +88,13 @@ function scoreKeep(verdict){
 
     if( verdict === true){
 
-        document.write(`Your score is: ${score = score + 1}`);
+        document.write(`Your score is: ${score = score + 1} `);
 
 
     }
     else{
         
-        document.write(`You lost 1 point. Final score: ${score = score - 1}`);
+        document.write(`You lost 1 point. Final score: ${score = score - 1} `);
 
     }
 
@@ -126,8 +126,8 @@ function hintSystem(varia, x){
 
 
     var d2Array = [
-        ["First name is Bjarne", "Last name is Stroustrep"],
-        ["First name is James", "Last name is Gosling"]
+        ["First name is Bjarne", "Last name is Stroustrep", "He was born on December 30"],
+        ["First name is James", "Last name is Gosling", "He made contributions for software systems like NeWS and Gosling Emacs"]
     ];
     
 
@@ -146,7 +146,12 @@ function hintSystem(varia, x){
 
 
 
+function soFar(myGuesses){
+    guessA.push(myGuesses);
 
+console.log(guessA);
+    
+}
 
 
 
