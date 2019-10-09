@@ -14,7 +14,7 @@ const guessA = [];
 
 // PROBLEM AREA
 // Handles which question is asked //
-function theQuestion(){
+function theQuestion(name, index){
     let guessA = [3];
     let getID = document.GetElementById("Form").onClick;
     

@@ -50,9 +50,10 @@
                 <form id = "Form" onclick = "">
 
                     
-                    Name: <input id = "FullName" type = "text" name = "FN"><br><br>
+                    FN: <input id = "FN" type = "text" name = "FN"><br><br>
 
-                    <input type="button"  value="Enter">
+                    
+                    <button onclick = "theQuestion(document.getElementById('FN'), Y)">Add</button>
                     
                 </form>
 
@@ -60,17 +61,10 @@
                     
                     
                     <script type = "text/javascript">
-                    
                     const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
                     
                     
-                     
                     
-                    
-
-
-
-
                     
                     let Y = Math.floor(Math.random() * arrayA.length);
                     document.writeln(arrayA[Y]);
