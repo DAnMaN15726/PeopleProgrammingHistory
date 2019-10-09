@@ -1,5 +1,5 @@
 let score = 0;
-const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
+// const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
 const guessA = [];
 
 
@@ -12,14 +12,18 @@ const guessA = [];
 
 //___________________________________________________________________________________________________________________________//
 
-
+// PROBLEM AREA
 // Handles which question is asked //
 function theQuestion(){
     let guessA = [3];
+    let getID = document.GetElementById("Form").onClick;
     
     
-    var Y = Math.floor(Math.random() * arrayA.length);
-    var X = prompt(arrayA[Y]);
+    // let Y = Math.floor(Math.random() * arrayA.length);
+    document.writeln(arrayA[Y]);
+    console.log("text");
+    
+    
     let arrayHold = [X , Y];
 
     return arrayHold;
@@ -31,9 +35,9 @@ function theQuestion(){
 // Determines what happens with the answer provided //
 function theAnswer(array){
     hintRef = array[1];                                             // I am using this variable to enter into the hint system.
-    var counter = 3;                                                // This counter keeps track of the while loop and also keeps track of the number of tries left.
-    var arrayB = ["bjarne stroustrup", "james gosling"]             // This is the array that has all of the answers. In a meticulous order.
-    var x = -1;
+    let counter = 3;                                                // This counter keeps track of the while loop and also keeps track of the number of tries left.
+    const arrayB = ["bjarne stroustrup", "james gosling"]             // This is the array that has all of the answers. In a meticulous order.
+    let x = -1;
 
     
     while( counter !=0){
@@ -149,7 +153,8 @@ function hintSystem(varia, x){
 function soFar(myGuesses){
     guessA.push(myGuesses);
 
-console.log(guessA);
+    console.log(guessA);
+    
     
 }
 
@@ -162,4 +167,4 @@ console.log(guessA);
 
 
 // Basic start. THIS IS WHERE THE CODE IS EXECUTED//
-theAnswer(theQuestion());
+// theAnswer(theQuestion());
