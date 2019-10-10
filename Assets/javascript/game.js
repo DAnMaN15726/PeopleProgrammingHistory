@@ -1,5 +1,5 @@
 let score = 0;
-// const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
+const arrayA = ["Who is the one who created the C++ coding language?", "Who created the Java programming language?"];
 const guessA = [];
 
 
@@ -14,17 +14,60 @@ const guessA = [];
 
 // PROBLEM AREA
 // Handles which question is asked //
-function theQuestion(name, index){
+function theQuestion(){
     let guessA = [3];
-    let getID = document.GetElementById("Form").onClick;
+    let X = name;
     
     
-    // let Y = Math.floor(Math.random() * arrayA.length);
-    document.writeln(arrayA[Y]);
-    console.log("text");
     
     
+    let Y = Math.floor(Math.random() * arrayA.length);
     let arrayHold = [X , Y];
+    // document.writeln(arrayA[Y]);
+    console.log("text");
+    newDiv = document.querySelector("#questionholder");
+    
+    
+    document.getElementById("Bjarne Stroustrup").addEventListener("click", defineBS);
+    document.getElementById("James Gosling").addEventListener("click", defineJG);
+    document.getElementById("Bill Gates").addEventListener("click", defineBG);
+    
+
+    // }
+    function defineBS(){
+        arrayHold[0] = "Bjarne Stroustrup";
+
+        return theAnswer(arrayHold);
+    }   
+
+    function defineJG(){
+        arrayHold[0] = "James Gosling";
+
+        return theAnswer(arrayHold);
+    }  
+    
+
+    function defineBG(){
+        arrayHold[0] = "Bill Gates";
+
+        return theAnswer(arrayHold);
+    }  
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+    
 
     return arrayHold;
 }
@@ -44,7 +87,7 @@ function theAnswer(array){
         let p = array[0].toLowerCase();
         if (p === arrayB[array[1]] ){
 
-            prompt("GJ!");
+            document.writeln("GJ!");
             scoreKeep(true);
             theAnswer(theQuestion());
         }
@@ -56,7 +99,7 @@ function theAnswer(array){
             soFar(array[0])
             counter = counter - 1;
             x = x + 1;
-            prompt(`WRONG! You have ${counter} tries left`);
+            document.writeln(`WRONG! You have ${counter} tries left`);
             
             hintSystem(array[1], x);       console.log(array[1]);
             
@@ -66,7 +109,7 @@ function theAnswer(array){
                 break;
             }else{
                 // This particular code recalls the SAME QUESTION to be asked again. //
-                array[0] = prompt(arrayA[array[1]]);
+                array[0] = document.writeln(arrayA[array[1]]);
             }
 
             
